@@ -1,0 +1,3 @@
+resources:
+  ApiPlatformAutoGroupBundle\Tests\Application\Entity\Book:
+    provider: ApiPlatformAutoGroupBundle\Tests\Application\Provider\BookProvider

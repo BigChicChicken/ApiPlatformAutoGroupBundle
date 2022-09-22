@@ -1,0 +1,7 @@
+services:
+  api_platform.auto_group.resource.metadata_collection_factory:
+    public: true
+    class: ApiPlatformAutoGroupBundle\Tests\Application\ResourceMetadataCollectionFactory\CustomResourceMetadataCollectionFactory
+    decorates: api_platform.metadata.resource.metadata_collection_factory
+    arguments:
+      - '@.inner'
