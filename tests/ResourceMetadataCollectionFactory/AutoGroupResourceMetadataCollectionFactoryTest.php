@@ -20,7 +20,6 @@ use ApiPlatformAutoGroupBundle\Tests\Application\Entity\Book;
 use ApiPlatformAutoGroupBundle\Tests\Application\ResourceMetadataCollectionFactory\CustomResourceMetadataCollectionFactory;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\Config\FileLocator;
-use Symfony\Component\Config\Resource\FileResource;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
