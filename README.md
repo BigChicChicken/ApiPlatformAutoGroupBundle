@@ -73,11 +73,11 @@ class CustomResourceMetadataCollectionFactory extends AutoGroupResourceMetadataC
 # config/services.yaml
 
 services:
-  api_platform.auto_group.resource.metadata_collection_factory:
+    api_platform.auto_group.resource.metadata_collection_factory:
         class: App\ResourceMetadataCollectionFactory\CustomResourceMetadataCollectionFactory
         decorates: api_platform.metadata.resource.metadata_collection_factory
         arguments:
-          - '@.inner'
+            - '@.inner'
 ```
 
 ## License
