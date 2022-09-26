@@ -13,7 +13,6 @@ namespace ApiPlatformAutoGroupBundle\ResourceMetadataCollectionFactory;
 
 use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Operation;
-use ApiPlatform\Metadata\Operations;
 use ApiPlatform\Metadata\Resource\Factory\ResourceMetadataCollectionFactoryInterface;
 use ApiPlatform\Metadata\Resource\ResourceMetadataCollection;
 
@@ -46,7 +45,6 @@ class AutoGroupResourceMetadataCollectionFactory implements ResourceMetadataColl
 
         /** @var ApiResource $resourceMetadata */
         foreach ($resourceMetadataCollection as $resourceMetadata) {
-            /** @var Operations $operations */
             $operations = $resourceMetadata->getOperations();
 
             if ($operations) {

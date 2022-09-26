@@ -14,7 +14,6 @@ namespace ApiPlatformAutoGroupBundle\Tests\ResourceMetadataCollectionFactory;
 use ApiPlatform\Exception\ResourceClassNotFoundException;
 use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Operation;
-use ApiPlatform\Metadata\Operations;
 use ApiPlatformAutoGroupBundle\ResourceMetadataCollectionFactory\AutoGroupResourceMetadataCollectionFactory;
 use ApiPlatformAutoGroupBundle\Tests\Application\Entity\Book;
 use ApiPlatformAutoGroupBundle\Tests\Application\ResourceMetadataCollectionFactory\CustomResourceMetadataCollectionFactory;
@@ -61,7 +60,6 @@ class AutoGroupResourceMetadataCollectionFactoryTest extends WebTestCase
 
         /** @var ApiResource $resourceMetadata */
         foreach ($resourceMetadataCollection as $resourceMetadata) {
-            /** @var Operations $operations */
             $operations = $resourceMetadata->getOperations();
 
             if ($operations) {
@@ -114,7 +112,6 @@ class AutoGroupResourceMetadataCollectionFactoryTest extends WebTestCase
 
         /** @var ApiResource $resourceMetadata */
         foreach ($resourceMetadataCollection as $resourceMetadata) {
-            /** @var Operations $operations */
             $operations = $resourceMetadata->getOperations();
 
             if ($operations) {
