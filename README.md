@@ -40,6 +40,8 @@ By default, the following strategy is applied to all entities:
 > 
 >{ShortName}:write:{OperationName}
 
+(Default operation name: `GetCollection` `Post` `Get` `Put` `Delete` `Patch`) 
+
 But if you want to use your custom strategy, just override the service like that:
 
 - Create a file that extend from `AutoGroupResourceMetadataCollectionFactory`.

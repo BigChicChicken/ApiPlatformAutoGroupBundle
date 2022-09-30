@@ -12,9 +12,12 @@ declare(strict_types=1);
 namespace ApiPlatformAutoGroupBundle\ResourceMetadataCollectionFactory;
 
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\CollectionOperationInterface;
+use ApiPlatform\Metadata\HttpOperation;
 use ApiPlatform\Metadata\Operation;
 use ApiPlatform\Metadata\Resource\Factory\ResourceMetadataCollectionFactoryInterface;
 use ApiPlatform\Metadata\Resource\ResourceMetadataCollection;
+use ReflectionClass;
 
 /**
  * Assigns predefined groups to all operations.
@@ -72,6 +75,14 @@ class AutoGroupResourceMetadataCollectionFactory implements ResourceMetadataColl
      */
     private function updateContextOnOperation(string $operationName, Operation $operation, string $shortName): Operation
     {
+        if ($operation instanceof HttpOperation) {
+            $defaultName = sprintf('_api_%s_%s%s', $operation->getUriTemplate() ?: $operation->getShortName(), strtolower($operation->getMethod() ?? HttpOperation::METHOD_GET), $operation instanceof CollectionOperationInterface ? '_collection' : '');
+            if ($operationName === $defaultName) {
+                $reflectionClass = new ReflectionClass($operation);
+                $operationName = $reflectionClass->getShortName();
+            }
+        }
+
         $normalizationContext = $operation->getNormalizationContext() ?? [];
         $normalizationContext['groups'] = array_unique(array_merge(
             $normalizationContext['groups'] ?? [],
