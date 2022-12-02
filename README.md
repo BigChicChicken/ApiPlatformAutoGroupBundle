@@ -84,4 +84,4 @@ services:
 
 ## License
 
-This is completely free and released under the [MIT License](https://github.com/BigChicChicken/ApiPlatformAutoGroupBundle/blob/main/LICENSE).
+This is completely free and released under the [MIT License](/LICENSE).
